@@ -2,12 +2,11 @@
 
 ## Quick Setup (5 minutes)
 
-### 1. Start Your Podcast Server
-```bash
-cd podcast-generator
-npm start
-```
-The server will start on http://localhost:3000
+### 1. Use Your Railway Server
+Your podcast server is now hosted on Railway 24/7 at:
+**https://podcast-generator-production-6b10.up.railway.app**
+
+No need to start a local server anymore!
 
 ### 2. Add Two New Nodes to N8N Workflow
 
@@ -21,7 +20,7 @@ The server will start on http://localhost:3000
 2. **Configure the HTTP Request node:**
 
    - **Method:** POST
-   - **URL:** `http://localhost:3000/api/generate-podcast`
+   - **URL:** `https://podcast-generator-production-6b10.up.railway.app/api/generate-podcast`
    - **Headers:**
      - Content-Type: `application/json`
    - **Body Type:** JSON
@@ -154,28 +153,27 @@ Loop_Split1 → Output EvoAPI2 → Wait_Split1
 
 - **Local files:** `podcast-generator/podcasts/podcast_DDMMYYYY_HHMM.mp3`
 - **Google Drive:** Uploaded to specified folder
-- **Download URL:** `http://localhost:3000/download/podcast_DDMMYYYY_HHMM.mp3`
+- **Download URL:** `https://podcast-generator-production-6b10.up.railway.app/download/podcast_DDMMYYYY_HHMM.mp3`
 
 ## Troubleshooting
 
-### Server not starting?
-```bash
-cd podcast-generator
-npm install
-npm start
-```
+### Server issues?
+Your server runs automatically on Railway 24/7. If there are issues:
+- Check Railway dashboard for deployment status
+- View logs in Railway dashboard
+- Ensure GEMINI_API_KEY is set in Railway environment variables
 
 ### HTTP Request timing out?
 - Increase timeout to 5 minutes (300000ms)
-- Check server is running on localhost:3000
+- Check Railway deployment status
 
 ### Audio quality issues?
 - Try different Google TTS voices in `src/api/google-tts.js`
 - Adjust speaking rate/pitch parameters
 
 ### Need help?
-- Check server logs: Look at your terminal where you ran `npm start`
-- Test API directly: `curl -X POST http://localhost:3000/api/podcast/health`
+- Check server logs: View Railway dashboard logs
+- Test API directly: `curl -X POST https://podcast-generator-production-6b10.up.railway.app/api/podcast/health`
 
 ## Sample Output
 

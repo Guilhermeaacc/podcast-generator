@@ -4,7 +4,7 @@
   "parameters": {
     "httpNodeParameters": {
       "method": "POST",
-      "url": "http://localhost:3000/api/generate-podcast",
+      "url": "https://podcast-generator-production-6b10.up.railway.app/api/generate-podcast",
       "sendHeaders": true,
       "headerParameters": {
         "parameters": [

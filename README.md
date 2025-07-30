@@ -39,7 +39,11 @@ Format your script like this:
 4. **Preview**: Use the built-in audio player to listen
 5. **Download**: Save the final podcast file
 
-## Installation
+## Live Demo
+
+🌐 **Try it now:** [https://podcast-generator-production-6b10.up.railway.app](https://podcast-generator-production-6b10.up.railway.app)
+
+## Local Development
 
 ```bash
 # Install dependencies
