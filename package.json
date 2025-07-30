@@ -18,8 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "BROWSER=none HOST=0.0.0.0 PORT=3000 react-scripts start",
-    "start:alt": "BROWSER=none HOST=127.0.0.1 PORT=8080 react-scripts start",
+    "start": "node server.js",
+    "start:dev": "BROWSER=none HOST=0.0.0.0 PORT=3000 react-scripts start",
     "start:fallback": "node server.js",
     "dev": "node start.js",
     "build": "react-scripts build",
