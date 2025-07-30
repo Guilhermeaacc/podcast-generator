@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Server logs and process files
+*.log
+server.log
+server.pid
+
+# Podcast output files (can be large)
+podcasts/
+
+# Environment files (keep API keys private!)
+.env

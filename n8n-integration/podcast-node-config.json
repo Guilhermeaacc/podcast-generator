@@ -1,0 +1,35 @@
+{
+  "name": "Generate Podcast",
+  "description": "Converts AI Agent news output into podcast and uploads to Google Drive",
+  "parameters": {
+    "httpNodeParameters": {
+      "method": "POST",
+      "url": "http://localhost:3000/api/generate-podcast",
+      "sendHeaders": true,
+      "headerParameters": {
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      },
+      "sendBody": true,
+      "bodyParameters": {
+        "bodyParametersType": "json",
+        "jsonContent": "={{ JSON.stringify({\n  \"newsText\": $('AI Agent').first().json.output,\n  \"options\": {\n    \"enableProgress\": false\n  }\n}) }}"
+      },
+      "options": {
+        "timeout": 300000,
+        "redirect": {
+          "redirect": {},
+          "maxRedirects": 21
+        }
+      }
+    }
+  },
+  "nodeType": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2,
+  "position": [420, -60],
+  "id": "podcast-generator-node"
+}

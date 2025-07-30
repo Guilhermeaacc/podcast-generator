@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# 🎙️ AI Podcast Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that converts text scripts into AI-generated podcasts using Google's Text-to-Speech API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Script Parsing**: Automatically identifies speakers from formatted text
+- **Multiple Voices**: Assigns different voices to different speakers
+- **Natural Speech**: Uses SSML formatting for natural-sounding audio with pauses and emphasis
+- **Audio Merging**: Combines all speaker segments into a single podcast file
+- **Modern UI**: Clean, responsive design with purple/blue gradient
+- **Progress Tracking**: Real-time progress indicators during generation
+- **Audio Preview**: Built-in player to preview the generated podcast
+- **Download**: Save the final podcast as an audio file
 
-### `npm start`
+## How to Use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Google Cloud TTS API Key**: 
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Enable the Text-to-Speech API
+   - Create an API key with TTS permissions
 
-### `npm test`
+### Script Format
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Format your script like this:
+```
+[Sarah] Welcome to the podcast! Today we're discussing AI.
+[John] That's right, Sarah. Let me explain what machine learning is.
+[Sarah] Great explanation! What about neural networks?
+```
 
-### `npm run build`
+### Steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Enter API Key**: Paste your Google TTS API key in the secure input field
+2. **Write Script**: Use the format `[Speaker] Text` for each line
+3. **Generate**: Click "Generate Podcast" and wait for processing
+4. **Preview**: Use the built-in audio player to listen
+5. **Download**: Save the final podcast file
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Install dependencies
+npm install
 
-### `npm run eject`
+# Start development server
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application will open at `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Building for Production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This creates an optimized production build in the `build` folder.
 
-## Learn More
+## Technical Details
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Supported Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **SSML Enhancement**: Automatic addition of pauses, emphasis, and natural speech patterns
+- **Voice Assignment**: Alternates between male and female voices for different speakers
+- **Currency & Numbers**: Proper pronunciation of monetary values and percentages
+- **Audio Merging**: Seamless combination of multiple audio segments
+- **Error Handling**: Clear error messages and validation
 
-### Code Splitting
+### Voice Mapping
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- First speaker: Female voice (en-US-Neural2-F)
+- Second speaker: Male voice (en-US-Neural2-J)
+- Third speaker: Female voice (en-US-Neural2-C)
+- Fourth speaker: Male voice (en-US-Neural2-D)
+- Pattern repeats for additional speakers
 
-### Analyzing the Bundle Size
+## Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Common Issues
 
-### Making a Progressive Web App
+1. **API Key Errors**: Ensure your Google Cloud TTS API is enabled and the key has proper permissions
+2. **CORS Issues**: The app makes direct API calls to Google's TTS service - ensure your API key allows web requests
+3. **Audio Playback**: Some browsers may require user interaction before playing audio
+4. **Large Scripts**: Very long scripts may take several minutes to process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Browser Compatibility
 
-### Advanced Configuration
+- Chrome/Edge: Full support
+- Firefox: Full support  
+- Safari: Full support (may require user interaction for audio)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Security Notes
 
-### Deployment
+- API keys are stored only in browser memory (not persisted)
+- Use the password field type to hide API key input
+- Consider implementing server-side API calls for production use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License - feel free to use and modify as needed.
