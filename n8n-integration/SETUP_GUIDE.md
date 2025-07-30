@@ -89,10 +89,12 @@ To upload directly to Google Drive, you need to set up OAuth credentials:
 ### 2. Set Environment Variables
 Create a `.env` file in your podcast-generator folder:
 ```env
-GOOGLE_TTS_API_KEY=AIzaSyB4HYATvK6oKUMi1FvaKSEvYV7qRIxCdWg
+GEMINI_API_KEY=your-gemini-api-key-here
 GOOGLE_DRIVE_CREDENTIALS={"clientId":"your-client-id","clientSecret":"your-client-secret","refreshToken":"your-refresh-token"}
 GOOGLE_DRIVE_FOLDER_ID=your-folder-id
 ```
+
+**⚠️ Security Note:** Never commit API keys to git! Always use environment variables.
 
 ### 3. Get Refresh Token
 Run this in your podcast-generator folder:

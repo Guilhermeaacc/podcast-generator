@@ -8,7 +8,7 @@ async function testVoiceMapping() {
   console.log('🎙️  Testing Voice Mapping with User\'s Script Format...\n');
 
   try {
-    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyB4HYATvK6oKUMi1FvaKSEvYV7qRIxCdWg';
+    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_TTS_API_KEY;
     const ttsService = new GeminiTTSService(apiKey);
     
     // Use the user's exact script format that starts with Lucas

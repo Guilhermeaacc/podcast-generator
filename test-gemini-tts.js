@@ -9,7 +9,7 @@ async function testGeminiTTS() {
 
   try {
     // Use the API key from the server config
-    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyB4HYATvK6oKUMi1FvaKSEvYV7qRIxCdWg';
+    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_TTS_API_KEY;
     
     // Create TTS service instance
     const ttsService = new GeminiTTSService(apiKey);

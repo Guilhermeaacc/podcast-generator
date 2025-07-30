@@ -20,8 +20,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 // Setup podcast API routes
 const podcastConfig = {
   // Support both old Google TTS and new Gemini API keys for backwards compatibility
-  geminiApiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyB4HYATvK6oKUMi1FvaKSEvYV7qRIxCdWg',
-  googleTTSApiKey: process.env.GOOGLE_TTS_API_KEY || 'AIzaSyB4HYATvK6oKUMi1FvaKSEvYV7qRIxCdWg', // Keep for fallback
+  geminiApiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_TTS_API_KEY,
+  googleTTSApiKey: process.env.GOOGLE_TTS_API_KEY,
   googleDriveCredentials: process.env.GOOGLE_DRIVE_CREDENTIALS ? JSON.parse(process.env.GOOGLE_DRIVE_CREDENTIALS) : null,
   googleDriveFolderId: process.env.GOOGLE_DRIVE_FOLDER_ID || null
 };
